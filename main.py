@@ -20,10 +20,18 @@ y = max(z, 0)
 dvalue = 1.0
 
 # Derivative of ReLU and the chain rule
-drelu_dz = dvalue * (1. if z > 0 else 0.)
+drelu_dz = dvalue * (1.0 if z > 0 else 0.0)
 print(drelu_dz)
 
 # Partial derivatives of the sum, the chain rule
 dsum_dxw0 = 1
+dsum_dxw1 = 1
+dsum_dxw2 = 1
+dsum_db = 1
+
 drelu_dxw0 = drelu_dz * dsum_dxw0
-print(drelu_dxw0)
+drelu_dxw1 = drelu_dz * dsum_dxw1                                                                                                                                                                                                                                                                                                                                                                                                                        
+drelu_dxw2 = drelu_dz * dsum_dxw2                                                                                                                                                                                                                                                                                                                                                                                                                        
+drelu_db = drelu_dz * dsum_db
+
+print(drelu_dxw0, drelu_dxw1, drelu_dxw2, drelu_db)
